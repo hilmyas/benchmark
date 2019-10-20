@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "960901008167",
+    "firebase_url": "https://framework-benchmark-74c34.firebaseio.com",
+    "project_id": "framework-benchmark-74c34",
+    "storage_bucket": "framework-benchmark-74c34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:960901008167:android:62119fbd32d8f5e7963702",
+        "android_client_info": {
+          "package_name": "com.mamorasoft.app.frameworkbenchmark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "960901008167-98mnknhci1sc7q13lvdit121f3ffm075.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mamorasoft.app.frameworkbenchmark",
+            "certificate_hash": "694f5af56917252c06768e8ca9b70d1dba77180e"
+          }
+        },
+        {
+          "client_id": "960901008167-h0bv02okk22ba50f0p90s90fgtpfc9t9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1o65yPpW_Tu7e075qX6fgWSEIQZpp6bQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "960901008167-h0bv02okk22ba50f0p90s90fgtpfc9t9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
