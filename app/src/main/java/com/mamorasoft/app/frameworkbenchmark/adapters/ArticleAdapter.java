@@ -22,9 +22,17 @@ import java.util.ArrayList;
 public class ArticleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     ArrayList<Article> articles;
     Activity context;
+    OnItemSelectedListener onItemSelectedListener;
 
-    public ArticleAdapter(Activity context, ArrayList<Article> articles) {
-        this.context = context;
+    public interface OnItemSelectedListener{
+        void onItemSelected(int pos);
+    }
+
+    public void setOnItemSelectedListener(OnItemSelectedListener onItemSelectedListener){
+        this.onItemSelectedListener = onItemSelectedListener;
+    }
+
+    public ArticleAdapter(ArrayList<Article> articles) {
         this.articles = articles;
     }
 

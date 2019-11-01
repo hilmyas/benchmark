@@ -46,7 +46,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements IMainView {
+public class MainActivity extends AppCompatActivity implements IMainView, ArticleAdapter.OnItemSelectedListener {
 
     RecyclerView recyclerView;
     EditText editText;
@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     Button buttonBrowse, buttonSend, buttonTakePhoto;
     Bitmap bitmap;
     ProgressBar progressBar;
-    ArticleApiInterface mApiInterface;
     ArticleAdapter adapter;
 
     File fileKTP;
@@ -77,7 +76,8 @@ public class MainActivity extends AppCompatActivity implements IMainView {
 
     private void init() {
         mainPresenter = new MainPresenter(this);
-        adapter = new ArticleAdapter(this, mainPresenter.getArticles());
+        adapter = new ArticleAdapter(mainPresenter.getArticles());
+        adapter.setOnItemSelectedListener(this);
 
         buttonTakePhoto = findViewById(R.id.buttonTakePhoto);
         progressBar = findViewById(R.id.progressBar);
@@ -223,5 +223,10 @@ public class MainActivity extends AppCompatActivity implements IMainView {
         } catch (Exception e) {
             showToast("Error: " + e.getMessage(), Toast.LENGTH_LONG);
         }
+    }
+
+    @Override
+    public void onItemSelected(int pos) {
+
     }
 }
