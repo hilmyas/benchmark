@@ -9,7 +9,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat.getSystemService
 import com.mamorasoft.app.frameworkbenchmark.views.MainActivity
 
 
@@ -27,7 +26,10 @@ class NotificationHelper {
                     .setContentTitle("My notification")
                     .setContentText("Much longer text that cannot fit one line...")
                     .setStyle(NotificationCompat.BigTextStyle()
-                            .bigText("Much longer text that cannot fit one line..."))
+                            .bigText("Much longer text that cannot fit one line..." +
+                                    "................................................." +
+                                    "..............................................." +
+                                    "............................................"))
                     .setContentIntent(pendingIntent)
                     .setPriority(NotificationCompat.PRIORITY_MAX)
 
