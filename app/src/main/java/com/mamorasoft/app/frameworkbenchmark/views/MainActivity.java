@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements IMainView, Articl
             init();
             getData();
 
-            HashMap<String, Object> notifOpts = new HashMap<String, Object>();
+            HashMap<String, Object> notifOpts = new HashMap<>();
             notifOpts.put(NotificationHelper.Companion.getTITLE(), "Title");
             notifOpts.put(NotificationHelper.Companion.getCONTENT(), "Content");
             notifOpts.put(NotificationHelper.Companion.getFULL_CONTENT(), "Full content");
