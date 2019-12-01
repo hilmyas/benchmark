@@ -34,6 +34,7 @@ import com.mamorasoft.app.frameworkbenchmark.presenters.interfaces.IMainPresente
 import com.mamorasoft.app.frameworkbenchmark.views.interfaces.IMainView;
 
 import java.io.File;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements IMainView, ArticleAdapter.OnItemSelectedListener {
 
@@ -60,8 +61,15 @@ public class MainActivity extends AppCompatActivity implements IMainView, Articl
             init();
             getData();
 
-
-            NotificationHelper.Companion.showNotification(this);
+            HashMap<String, Object> notifOpts = new HashMap<String, Object>();
+            notifOpts.put(NotificationHelper.Companion.getTITLE(), "Title");
+            notifOpts.put(NotificationHelper.Companion.getCONTENT(), "Content");
+            notifOpts.put(NotificationHelper.Companion.getFULL_CONTENT(), "Full content");
+            notifOpts.put(NotificationHelper.Companion.getNOTIF_ID(), 1234);
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            NotificationHelper.Companion.showNotification(this, notifOpts, pendingIntent);
         }
 
     }
