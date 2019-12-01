@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.core.app.NotificationManagerCompat;
+
 import com.mamorasoft.app.frameworkbenchmark.R;
 import com.mamorasoft.app.frameworkbenchmark.adapters.ArticleAdapter;
 import com.mamorasoft.app.frameworkbenchmark.helper.ApiClient;
@@ -42,6 +44,7 @@ public class MainPresenter implements IMainPresenter {
         this.mainView = mainView;
         mApiInterface = ApiClient.getClient().create(ArticleApiInterface.class);
         articles = new ArrayList<>();
+
     }
 
     @Override

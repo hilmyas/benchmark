@@ -1,13 +1,17 @@
 package com.mamorasoft.app.frameworkbenchmark.views;
 
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +24,7 @@ import com.mamorasoft.app.frameworkbenchmark.R;
 import com.mamorasoft.app.frameworkbenchmark.adapters.ArticleAdapter;
 import com.mamorasoft.app.frameworkbenchmark.helper.Constants;
 import com.mamorasoft.app.frameworkbenchmark.helper.ImageManager;
+import com.mamorasoft.app.frameworkbenchmark.helper.NotificationHelper;
 import com.mamorasoft.app.frameworkbenchmark.helper.PermissionManager;
 import com.mamorasoft.app.frameworkbenchmark.helper.ProgressBarSwitch;
 import com.mamorasoft.app.frameworkbenchmark.helper.RecyclerViewManager;
@@ -54,6 +59,9 @@ public class MainActivity extends AppCompatActivity implements IMainView, Articl
         } else {
             init();
             getData();
+
+
+            NotificationHelper.Companion.showNotification(this);
         }
 
     }
@@ -134,6 +142,7 @@ public class MainActivity extends AppCompatActivity implements IMainView, Articl
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case Constants.CODE_REQUEST_IMAGE_CAPTURE:
                 if (resultCode == RESULT_OK) {
